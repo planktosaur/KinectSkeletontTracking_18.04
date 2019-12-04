@@ -1,0 +1,2 @@
+export OPENNI2_INCLUDE=/home/ubuntu/repos/testOpenNI2_papercups/OpenNI-Linux-x64-2.2/Include
+export OPENNI2_REDIST=/home/ubuntu/repos/testOpenNI2_papercups/OpenNI-Linux-x64-2.2/Redist
