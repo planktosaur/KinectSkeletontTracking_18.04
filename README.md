@@ -8,7 +8,7 @@ This project is an immersive learning experience that has the **goal** of pittin
 
 Of course this skeleton mapping and kinect usage can be mapped to a lot of other projects, I have made this resource public so that others may use the installation for whatever else they desire. I also did this on a persistent live boot drive and it runs pretty well. 
 
-## **Prereqs (What worked for me)**
+## Prerequisitess **(What worked for me)**
 
 - Ubuntu 18.04
 - OpenNI 1.5.2
@@ -18,6 +18,7 @@ Of course this skeleton mapping and kinect usage can be mapped to a lot of other
 ## Step 1 - Dependencies
 
 Let's start by making sure you have the dependencies to run the software.
+
 `sudo apt-get install git python libusb-1.0-0-dev freeglut3-dev openjdk-7-jdk`
 
 - git - necessary to access github libraries
@@ -67,7 +68,7 @@ I reverted to gcc-4.8 and g++-4.8 and that resolved the error build failure. You
    
 Now that the versions are installed, the next thing I did was set them up to be alternatives. The 10 and 20 just serve as priority indicators for the alternatives. I also installed symbol links for cc and c++ to link to gcc and g++ respectively. 
  
- {
+{
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 10
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 20
 
