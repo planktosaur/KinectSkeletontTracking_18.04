@@ -98,7 +98,7 @@ The OpenNI device driver also won't let you talk to the kinect, so avoid getting
  ```
     cd ~/kinect/
     git clone git://github.com/avin2/SensorKinect.git
-    ```
+```
 
 This also happens to have a RedistMaker script in a very similar Platform/Linux directory. Hmm, coincidence? I think not! These were made to be integrated with one another!
 
