@@ -36,23 +36,23 @@ Now that the dependencies are out of the way, let's get OpenNI installed.
     mkdir ~/kinect
     cd ~/kinect
     git clone https://github.com/OpenNI/OpenNI.git
-   }
+}
   
 Run RedistMaker to install output binaries. I could not install RedistMaker so I've reported the route that got my OpenNI setup to install properly. 
 
-{
+ {
     cd OpenNI/Platform/Linux/CreateRedist/
     chmod +x RedistMaker
     ./RedistMaker
     cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.2.23/
     sudo ./install.sh
-    }
+}
 
 ### Oh no, the Build Failed
 I ended up getting this error... If you didn't get an error, then move on to **Step 4**, don't worry about how I struggled. :(
 {
     failed to execute: make -j24 -C /home/<user>/Kinect/OpenNI/Platform/Linux
-    }
+}
 
 and it said Building Failed! at the end of it or something like that and I got really frustrated. 
 
@@ -64,11 +64,11 @@ I reverted to gcc-4.8 and g++-4.8 and that resolved the error build failure. You
     sudo update-alternatives --remove-all gcc 
     sudo update-alternatives --remove-all g++
     sudo apt-get install gcc-4.8 gcc-6 g++-4.8 g++-6
-    }
+}
    
 Now that the versions are installed, the next thing I did was set them up to be alternatives. The 10 and 20 just serve as priority indicators for the alternatives. I also installed symbol links for cc and c++ to link to gcc and g++ respectively. 
  
-{
+ {
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 10
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 20
 
@@ -84,10 +84,10 @@ Now that the versions are installed, the next thing I did was set them up to be 
    
 Next I just chose the alternatives with the intuitive description provided by the GUI. It will allow you to select the gcc and g++ version using numbers. 
 
-{
+ {
     sudo update-alternatives --config gcc
     sudo update-alternatives --config g++
-    }
+}
 
 And then I was able to install OpenNI!
 
@@ -103,14 +103,14 @@ The OpenNI device driver also won't let you talk to the kinect, so avoid getting
 
 This also happens to have a RedistMaker script in a very similar Platform/Linux directory. Hmm, coincidence? I think not! These were made to be integrated with one another!
 
-{
+ {
     cd SensorKinect/Platform/Linux/CreateRedist/
     chmod +x RedistMaker
     ./RedistMaker
     cd ../Redist/Sensor-Bin-Linux-x64-v5.1.0.25/
     chmod +x install.sh
     sudo ./install.sh
-    }
+}
 
 ## Step 4: NITE Installation (1.5.2.23)
 Now I needed NITE and you can get that from [openni.org](openni). Just go ahead and search for and download NITE 1.5.2 and you'll be all set.
@@ -119,24 +119,24 @@ Haha, so openni.org got bought by apple in 2014 and I thought my life was over. 
 
 Download the archive and extract it so you can go to the Data directory. 
 
-{
+ {
     cd ~/kinect
     tar -xvjpf OpenNI-Linux-x64-2.2.0.33.tar.bz2
     cd NITE-Bin-Dev-Linux-x64-v1.5.2.21/Data
-    }
+}
 
 Then I went back to the NITE directory and ran the install script. 
 
-{
+ {
     cd ..
     sudo ./install.sh
-    }
+}
 
 And then that was it. I got the majority of this information from this awesome [link](http://mitchtech.net/ubuntu-kinect-openni-primesense/) with a little bit of web surfing to makeup for the 7 year gap in technology. I'd recommend going back to the [link](http://mitchtech.net/ubuntu-kinect-openni-primesense/) if I made any mistakes, but I hope I was clear. 
 
 If I go to either of the two directories, I'm able to run all of the same programs which almost all start with Sample-Ni and the camera and kinect sensors initiate. Just type them exactly as listed. 
 
-{
+ {
     NiViewer
     Sample-NiAudioSample
     Sample-NiBackRecorder
@@ -150,23 +150,15 @@ If I go to either of the two directories, I'm able to run all of the same progra
     Sample-NiSimpleViewer
     Sample-NiUserSelection
     Sample-NiUserTracker
-{
+}
+
+ {
     ~/kinect/OpenNI/Platform/Linux/Bin/x64-Release
-    }
+}
    
 **OR**
 
-{
+ {
     ~kinect//NITE-Bin-Dev-Linux-v1.5.2.23/x64/Samples/Bin/x64-Release
-    }
-   
-
-
-
-
-
-
-
-
-
+}
 
